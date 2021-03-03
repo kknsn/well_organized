@@ -1,9 +1,9 @@
 <body class="text-center bg-light">
 <main class="form-login">
 
-<h2 class="mb-3 fw-normal">Log in</h2>
+<h2 class="mb-3 fw-normal">ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
   <div class="field">
     <div class="field-label">
       <%= f.label :email, "メールアドレス" %>
@@ -30,7 +30,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-lg btn-primary mb-3" %>
+    <%= f.submit "ログイン", class: "btn btn-lg btn-primary mb-3" %>
   </div>
 <% end %>
 
