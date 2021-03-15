@@ -19,21 +19,21 @@
         <li class="nav-item">
           <a class="nav-link" href="#">活用法</a>
         </li>
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#">プロフィール</a>
+          <%= link_to current_user.name, books_index_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ログアウト</a>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
-        <%# else %>
+        <% else %>
         <li class="nav-item">
-          <a class="nav-link" href="#">新規登録</a>
+          <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ログイン</a>
+          <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
         </li>
-        <%# end %>
+        <% end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
