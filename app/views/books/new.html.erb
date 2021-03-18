@@ -12,7 +12,7 @@
         <%= form_with(model: @book, local: true) do |f| %>
 
           <div class="col-12 mb-3">
-            <label for="book-tittle" class="form-label">・タイトル</label>
+            <label for="book-title" class="form-label">・タイトル</label>
             <%= f.text_field :title, class:"form-control", id:"book-title", placeholder:"桃太郎" %>
             <div class="invalid-feedback">
               タイトルを入力してください。
@@ -41,8 +41,8 @@
           </div>
 
           <div class="col-12 mb-3">
-            <label for="inportant" class="form-label">・1番重要だと思った部分</label>
-            <%= f.text_area :inportant, class:"form-control", id:"inportant", placeholder:"仲間を増やし鬼ヶ島へ向かう展開",rows:"7", maxlength:"1000" %>
+            <label for="important" class="form-label">・1番重要だと思った部分</label>
+            <%= f.text_area :important, class:"form-control", id:"important", placeholder:"仲間を増やし鬼ヶ島へ向かう展開",rows:"7", maxlength:"1000" %>
           </div>
 
           <div class="col-12 mb-3">
