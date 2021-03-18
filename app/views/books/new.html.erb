@@ -20,13 +20,10 @@
           </div>
 
           <div class="col-md-4 mb-3">
-              <label for="state" class="form-label">・ジャンル</label>
-              <select class="form-select" id="state" required>
-                <option value="">選択してください</option>
-                <option>東京都</option>
-              </select>
+              <label for="genre" class="form-label">・ジャンル</label>
+              <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form-select"}) %>
               <div class="invalid-feedback">
-                有効な都道府県を入力してください。
+                有効なジャンルを選択してください。
               </div>
           </div>
 
