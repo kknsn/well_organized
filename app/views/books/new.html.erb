@@ -1,0 +1,74 @@
+<body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>感想投稿</h2>
+      <p class="lead">本の感想を投稿してみましょう！</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-7 col-lg-8">
+        <%= form_with(model: @book, local: true) do |f| %>
+
+          <div class="col-12 mb-3">
+            <label for="book-tittle" class="form-label">・タイトル</label>
+            <%= f.text_field :title, class:"form-control", id:"book-title", placeholder:"桃太郎" %>
+            <div class="invalid-feedback">
+              タイトルを入力してください。
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+              <label for="state" class="form-label">・ジャンル</label>
+              <select class="form-select" id="state" required>
+                <option value="">選択してください</option>
+                <option>東京都</option>
+              </select>
+              <div class="invalid-feedback">
+                有効な都道府県を入力してください。
+              </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="thought" class="form-label">・１行で感想</label>
+            <%= f.text_field :thought, class:"form-control", id:"thought", placeholder:"まさかの展開の連続に驚いた" %>
+            <div class="invalid-feedback">
+              感想を入力してください。
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+             <label for="motivation" class="form-label">・なぜ読もうと思ったのか</label>
+             <%= f.text_area :motivation, class:"form-control", id:"motivation", placeholder:"タイトルに興味を持ったので", rows:"7", maxlength:"1000" %>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="inportant" class="form-label">・1番重要だと思った部分</label>
+            <%= f.text_area :inportant, class:"form-control", id:"inportant", placeholder:"仲間を増やし鬼ヶ島へ向かう展開",rows:"7", maxlength:"1000" %>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="reason" class="form-label">・その理由</label>
+            <%= f.text_area :reason, class:"form-control", id:"reason", placeholder:"他者の助けを借りることで勝てるということを学べたので",rows:"7", maxlength:"1000" %>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="personal" class="form-label">・個人的に気になった部分</label>
+            <%= f.text_area :personal,  class:"form-control", id:"personal", placeholder:"鬼ヶ島に行くための船はどうやって調達したのか？" ,rows:"7", maxlength:"1000" %>
+          </div>
+
+          <div class="col-12 mb-3">
+            <label for="act" class="form-label">・この読書の経験を生活のどこで活かせそうか</label>
+            <%= f.text_area :act,  class:"form-control", id:"act", placeholder:"難しそうな案件でも恐れずに挑戦しようと思う。チームの役割が明確であれば、最大限の力を発揮出来る。" ,rows:"7", maxlength:"1000" %>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="contribution-btn">
+            <%= f.submit "投稿する", class:"w-100 btn btn-primary btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </main>
