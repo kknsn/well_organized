@@ -7,4 +7,6 @@ class User < ApplicationRecord
          with_options format: { with: /\A[a-zA-Z0-9]+\z/ } do
           validates :password
         end
+
+  has_many :books
 end
