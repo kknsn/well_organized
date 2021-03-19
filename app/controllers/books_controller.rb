@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :new, :create,]
 
   def index
+    @books =Book.all.order("created_at DESC").limit(3)
   end
 
   def new
