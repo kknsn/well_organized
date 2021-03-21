@@ -1,0 +1,22 @@
+<head>
+   <link rel="canonical" href="https://getbootstrap.jp/docs/5.0/examples/offcanvas/">
+</head>
+
+<body class="bg-light">
+<main class="container">
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">全ての投稿一覧</h6>
+    <% @books.each do |book| %>
+      <div class="d-flex text-muted pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#deb887"/><text x="50%" y="50%" fill="#dcb887" dy=".3em">32x32</text></svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <strong class="text-gray-dark ml-3"><a href="#"><%= book.title %></a></strong>
+          <strong class="d-block text-gray-dark ml-3"><%= book.user.name %></strong>
+        </p>
+      </div>
+    <% end %>
+    <small class="d-block text-end mt-3">
+      <a href="/">トップへ戻る</a>
+    </small>
+  </div>

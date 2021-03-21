@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_index, except: [:index, :show, :new, :create,]
+  before_action :move_to_index, except: [:index, :show, :new, :create, :all_index]
 
   def index
+    @books =Book.all.order("created_at DESC").limit(3)
   end
 
   def new
@@ -16,6 +17,10 @@ class BooksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def all_index
+    @books =Book.all.order("created_at DESC")
   end
 
   private
