@@ -19,6 +19,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    @book = Book.find(params[:id])
+  end
+
   def all_index
     @books =Book.all.order("created_at DESC")
   end
