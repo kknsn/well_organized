@@ -1,0 +1,57 @@
+<head>
+   <link rel="canonical" href="https://getbootstrap.jp/docs/5.0/examples/offcanvas/">
+</head>
+
+<body class="bg-light">
+  <main class="container">
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h2 class="border-bottom pb-2 mb-0"><%= @book.title %></h2>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・１行で感想</b></h6>
+          <h6 class="ml-3"><%= @book.thought %></h6>
+        </p>
+      </div>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・なぜ読もうと思ったのか</b></h6>
+          <h6 class="ml-3"><%= @book.motivation %></h6>
+        </p>
+      </div>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・1番重要だと思った部分</b></h6>
+          <h6 class="ml-3"><%= @book.important %></h6>
+        </p>
+      </div>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・その理由</b></h6>
+          <h6 class="ml-3"><%= @book.reason %></h6>
+        </p>
+      </div>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・個人的に気になった部分</b></h6>
+          <h6 class="ml-3"><%= @book.personal %></h6>
+        </p>
+      </div>
+
+      <div class="border-bottom w-100">
+        <p class="pb-3 mb-0">
+          <h6 class="ml-3"><b>・この読書の経験を生活のどこで活かせそうか</b></h6>
+          <h6 class="ml-3"><%= @book.act %></h6>
+        </p>
+      </div>
+
+    <small class="d-block text-end mt-3">
+      <a href="/">TOPに戻る</a>
+    </small>
+  </div>
+</body>
