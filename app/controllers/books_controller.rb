@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:show, :edit]
   before_action :move_to_index, except: [:index, :show, :new, :create, :all_index]
 
   def index
@@ -20,11 +21,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def all_index
@@ -35,6 +34,10 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title,:genre_id,:thought,:motivation,:important,:reason,:personal,:act).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @book = Book.find(params[:id])
   end
 
   def move_to_index
