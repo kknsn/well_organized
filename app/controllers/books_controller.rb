@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_index, except: [:index, :show, :new, :create, :all_index]
 
   def index
@@ -24,6 +24,14 @@ class BooksController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      redirect_to book_path(@book.id)
+    else
+      render :edit
+    end
   end
 
   def all_index
